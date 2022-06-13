@@ -1,1 +1,1 @@
-​
+cache triangle in arr by calculating sum upto arr[i][j] and use it in next row by taking min of [i-1][j] and [i-1][j-1]
