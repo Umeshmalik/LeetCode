@@ -1,1 +1,1 @@
-​
+loop over array, from left to right and right to left and get max sub array product and then compare max from both loops and that will be answer
