@@ -1,1 +1,1 @@
-​
+start looping from 0 to n-1, on every index, try to get if any odd or even palindrome possible here, to check this, take 2 pointer and start decreasing one and increasing other, until they stay same, loop out and when they stop put substr(mn+1, mx) as longest substr and stay doing same
