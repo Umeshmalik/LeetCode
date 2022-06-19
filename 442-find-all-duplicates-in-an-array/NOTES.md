@@ -1,1 +1,1 @@
-​
+basically rearrage all numbers based on their index, like if 1 is somewhere in array, then 1 should stand at 0 index, basically sort it by swaping, and then have one more loop that will take all those numbers which don't stand at correct index, they are imposter
