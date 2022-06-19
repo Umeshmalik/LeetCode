@@ -1,1 +1,3 @@
-​
+take first index as free, now start from 1st index and have two conditions , first if number is repeating , then have a check that after we check it for duplication, if check is going upto 2 then directly go into if statement that will check if next incoming number is same or not if it is same go utpo that number using loop, upto when different number will not come, when you will face different number store fast pointer number in slow pointer and make check again 1 , also have a check while looping loop should not overflow, if it is return slow pointer directly, else after storing value in slow pointer increase value of both pointer by 1 and
+in other case if number is not duplicate, directly  store fast pointer in slow pointer make check 1 and increase both pointers by 1
+and that's 🤩  it.
