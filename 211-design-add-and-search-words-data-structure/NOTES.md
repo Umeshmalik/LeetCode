@@ -1,1 +1,1 @@
-​
+insertion will be as same as normal trie and TrieNode struct, but for search use dfs, basically when we have normal chars, it is ok, but in case of `.` we need to go every single char in next node and again follow same steps
