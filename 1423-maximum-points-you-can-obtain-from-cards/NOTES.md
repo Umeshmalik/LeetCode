@@ -1,1 +1,1 @@
-make a break up of n - k and now get total sum and stay counting n-k sum and lets see max sum upto n
+​
