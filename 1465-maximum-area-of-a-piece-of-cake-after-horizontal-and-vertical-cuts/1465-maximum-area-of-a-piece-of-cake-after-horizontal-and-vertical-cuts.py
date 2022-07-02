@@ -1,9 +1,7 @@
 class Solution:
     def maxArea(self, h: int, w: int, horizontalCuts: List[int], verticalCuts: List[int]) -> int:
-        horizontalCuts.append(0)
-        horizontalCuts.append(h)
-        verticalCuts.append(0)
-        verticalCuts.append(w)
+        horizontalCuts += [0,h]
+        verticalCuts += [0,w]
         verticalCuts.sort()
         horizontalCuts.sort()
         vmax = 0
