@@ -1,0 +1,1 @@
+just traverse from back and forth making arrays for both cases and then get max of every index from both array and do summation
