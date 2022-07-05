@@ -1,1 +1,1 @@
-​
+Sort it initially and them look for all subarrays with longest consecutive number, just look out for duplicate cases, if we are facing any duplicate, just slide from it, without counting it
