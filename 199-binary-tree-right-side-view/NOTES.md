@@ -1,0 +1,1 @@
+use a hashmap to see if we are visting this level first time or not, if it is first time/no value for this level in map, then add it neither just move to next level and see for right view
