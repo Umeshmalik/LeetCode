@@ -8,7 +8,7 @@ class Solution:
     def levelOrderBottom(self, root: Optional[TreeNode]) -> List[List[int]]:
         d = {}
         self.helper(root, d, 0)
-        return [d[i] for i in d][::-1]
+        return [d[list(d.keys())[i]] for i in range(len(d) - 1, -1, -1)]
         
         
     def helper(self, root, d, level):
