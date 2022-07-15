@@ -1,1 +1,1 @@
-​
+start traversing from root and if any 1 is found start going in all direction from there, whereever indexs goes out or encounter 0, return from there, and see max area using recusion
