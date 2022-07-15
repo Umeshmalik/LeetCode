@@ -17,6 +17,6 @@ class Solution:
         self.max_area = max(self.max_area, self.curr_max)
         self.getMax(a-1, b, grid)
         self.getMax(a, b-1, grid)
-        self.getMax(a, b+1, grid)
+        self.getMax(a, b+1, grid)   
         self.getMax(a+1, b, grid)
         return
