@@ -1,7 +1,7 @@
 class Solution:
-    max_area = 0
-    curr_max = 0 
     def maxAreaOfIsland(self, grid: List[List[int]]) -> int:        
+        self.max_area = 0
+        self.curr_max = 0 
         for i in range(len(grid)):
             for j in range(len(grid[i])):
                 if grid[i][j] == 1:
