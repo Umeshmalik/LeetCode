@@ -1,1 +1,1 @@
-​
+use advantage of fact that it is complete binary tree, in which last level cab in incomplete, so take apart every level and add up
