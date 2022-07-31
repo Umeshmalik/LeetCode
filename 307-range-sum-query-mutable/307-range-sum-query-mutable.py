@@ -23,7 +23,7 @@ class NumArray:
             numbers after number after right index and minus them from sum 
             and return remaining answer
         '''
-        to_minus = sum([self.arr[i] for i in range(0, left)] + [self.arr[i] for i in range(right+1, len(self.arr))])
+        to_minus = sum(self.arr[0:left] + self.arr[right+1 : len(self.arr)])
         return self.s - to_minus
 
 # Your NumArray object will be instantiated and called as such:
