@@ -10,12 +10,8 @@ class NumArray:
         self.arr[index] = val
 
     def sumRange(self, left: int, right: int) -> int:
-        l = 0
-        for i in range(0, left):
-            l += self.arr[i]
-        r = 0
-        for i in range(right+1, len(self.arr)):
-            r += self.arr[i]
+        l = sum([self.arr[i] for i in range(0, left)])
+        r = sum([self.arr[i] for i in range(right+1, len(self.arr))])
         return self.s - l - r
 
 # Your NumArray object will be instantiated and called as such:
