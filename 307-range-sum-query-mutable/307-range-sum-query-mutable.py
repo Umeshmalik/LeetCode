@@ -4,8 +4,7 @@ class NumArray:
         '''
             initialy store initial array and sum of whole array
         '''
-        self.arr = nums
-        self.s = sum(nums)
+        self.arr, self.s = nums, sum(nums)
 
     def update(self, index: int, val: int) -> None:
         '''
@@ -13,8 +12,7 @@ class NumArray:
              and number previously on that index, and add/minus that differ from sum 
              and set new value to that index in array
         '''
-        diff = val - self.arr[index]
-        self.s += diff
+        self.s += val - self.arr[index]
         self.arr[index] = val
 
     def sumRange(self, left: int, right: int) -> int:
@@ -23,8 +21,7 @@ class NumArray:
             numbers after number after right index and minus them from sum 
             and return remaining answer
         '''
-        to_minus = sum([self.arr[i] for i in range(0, left)] + [self.arr[i] for i in range(right+1, len(self.arr))])
-        return self.s - to_minus
+        return self.s - sum([self.arr[i] for i in range(0, left)] + [self.arr[i] for i in range(right+1, len(self.arr))])
 
 # Your NumArray object will be instantiated and called as such:
 # obj = NumArray(nums)
