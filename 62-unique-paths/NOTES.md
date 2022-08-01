@@ -1,1 +1,1 @@
-​
+create a array of size m * n, that will be used for memo, at every step, sum of top and left step will be total number of unique paths, so we will calculate upto n-1, m-1 and that will be our answer
