@@ -1,1 +1,1 @@
-​
+this is not any dp question or any thing similar, just try to be greedy about answer and do not go to any one more than once, becuase they are costly
