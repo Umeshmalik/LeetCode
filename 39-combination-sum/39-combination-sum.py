@@ -4,10 +4,7 @@ class Solution:
         def helper(index, rem_target, array):
             if rem_target < 0: return
             if rem_target == 0:
-                array_to_insert = []
-                for i in array:
-                    array_to_insert.append(i)
-                ans.append(array_to_insert)
+                ans.append(array[:])
                 return
             for i in range(index, len(candidates)):
                 if candidates[i] > rem_target: continue 
