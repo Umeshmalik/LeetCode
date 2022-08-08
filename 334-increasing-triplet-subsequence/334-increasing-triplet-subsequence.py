@@ -12,6 +12,7 @@ class Solution:
             return lo
         dp = [arr[0]]
         for i, n in enumerate(arr[1:]):
+            if len(dp) > 2: return True
             if dp[-1] < n:
                 dp.append(n)
             else:
