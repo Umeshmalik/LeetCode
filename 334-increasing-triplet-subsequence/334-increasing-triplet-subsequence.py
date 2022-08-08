@@ -1,7 +1,8 @@
 class Solution:
     def increasingTriplet(self, arr: List[int]) -> bool:
         dp = [arr[0]]
-        for n in arr[1:]:
+        for i in range(1, len(arr)):
+            n = arr[i]
             if dp[-1] < n:
                 dp.append(n)
                 if len(dp) > 2: return True
