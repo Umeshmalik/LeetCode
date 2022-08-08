@@ -11,4 +11,4 @@ class Solution:
                     dp[0] = n
                 elif len(dp) == 2 and n <= dp[1]:
                     dp[1] = n
-        return False if len(dp) < 3 else True
+        return False
