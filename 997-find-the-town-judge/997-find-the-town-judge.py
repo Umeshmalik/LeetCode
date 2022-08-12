@@ -3,10 +3,7 @@ class Solution:
         if len(trust) == 0 and n == 1: return 1
         d = {}
         for i, j in trust:
-            if j in d:
-                d[j] += 1
-            else:
-                d[j] = 1
+            d[j] = d[j] + 1  if j in d else 1
         peo = []
         for i in d.keys():
             if d[i] == n - 1:
