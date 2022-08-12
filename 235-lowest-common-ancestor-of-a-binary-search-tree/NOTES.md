@@ -1,1 +1,1 @@
-​
+remember this thing this is a BST, so go only in that direction that is required, not in any other direction
