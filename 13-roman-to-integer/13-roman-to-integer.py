@@ -12,8 +12,6 @@ class Solution:
         res = mp[s[-1]]
         for i in range(len(s)-2, -1, -1):
             n = mp[s[i]]
-            if n < mp[s[i+1]]:
-                res -= n
-            else:
-                res += n
+            last = mp[s[i+1]]
+            res = res - n if n < last else res + n
         return res
