@@ -1,8 +1,6 @@
 class Solution:
     def minSetSize(self, arr: List[int]) -> int:
-        d = {}
-        for i in arr:
-            d[i] = 1 if i not in d else d[i] + 1
+        d = collections.Counter(arr)
         size = len(arr)
         li = sorted(list(d.values()))
         s = 0
