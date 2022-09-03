@@ -5,7 +5,9 @@ class Solution:
         def get(st, nxt):
             if nxt > 9 or nxt < 0 or len(st) > n: return None
             st = st + str(nxt)
-            if len(st) == n and st not in self.arr: self.arr.append(st)
+            if len(st) == n and st not in self.arr: 
+                self.arr.append(st)
+                return None
             get(st, nxt-k)
             get(st, nxt+k)
             return None
