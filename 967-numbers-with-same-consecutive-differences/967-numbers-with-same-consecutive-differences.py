@@ -9,6 +9,5 @@ class Solution:
             get(st, nxt+k)
             return None
         for i in range(1, 10):
-            for j in range(n):
-                get("", i)
+            get("", i)
         return self.arr
