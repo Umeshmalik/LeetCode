@@ -8,15 +8,15 @@ class Node:
 
 class Solution:
     def levelOrder(self, root: 'Node') -> List[List[int]]:
-        d = {}
-        self.helper(root, d, 0)
-        return [d[i] for i in d]
-        
-    def helper(self, root, d, level):
-        if not root: return
-        if level not in d:
-            d[level] = [root.val]
-        else:
-            d[level].append(root.val)
-        for i in root.children:
-            self.helper(i, d, level+1)
+        self.d = {}
+        def rec(node, level):
+            if not node: return None
+            if level not in self.d.keys():
+                self.d[level] = [node.val]
+            else:
+                self.d[level].append(node.val)
+            for i in node.children:
+                rec(i, level+1)
+            return None
+        rec(root, 0)
+        return [i for i in self.d.values()]
