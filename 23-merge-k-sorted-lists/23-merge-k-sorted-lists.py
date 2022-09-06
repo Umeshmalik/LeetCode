@@ -19,15 +19,9 @@ class Solution:
                     b = b.next
                 li = li.next
             if a:
-                while a:
-                    li.next = a
-                    a = a.next
-                    li = li.next
+                li.next = a
             if b:
-                while b:
-                    li.next = b
-                    b = b.next
-                    li = li.next
+                li.next = b
             return head.next
 
         while len(lists) > 1:
@@ -36,4 +30,4 @@ class Solution:
             node = merge(st1, st2)
             lists.append(node)
 
-        return lists[0]
+        return lists.pop()
