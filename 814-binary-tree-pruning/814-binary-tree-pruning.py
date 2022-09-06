@@ -18,4 +18,3 @@ class Solution:
         if root.val == 0 and not root.right and not root.left:
             return None
         return root
-        
