@@ -12,13 +12,10 @@ class Solution:
             that returned node will be assigned to calling place, 
             which is in return same address, on which it was stored
         '''
-        def rec(node):
-            if not node: return None
-            node.left = rec(node.left)
-            node.right = rec(node.right)
-            if node.val == 0 and not node.right and not node.left:
-                return None
-            return node
-        
-        return rec(root)
+        if not root: return None
+        root.left = self.pruneTree(root.left)
+        root.right = self.pruneTree(root.right)
+        if root.val == 0 and not root.right and not root.left:
+            return None
+        return root
         
