@@ -1,9 +1,11 @@
 class Solution:
     def majorityElement(self, nums: List[int]) -> List[int]:
-        d = collections.Counter(nums)
+        d = defaultdict(int)
         mx = len(nums) // 3
+        for i in nums:
+            d[i] += 1
         ans = []
-        for i in d.keys():
-            if d[i] > mx:
-                ans.append(i)
+        for num, count in d.items():
+            if count > mx:
+                ans.append(num)
         return ans
