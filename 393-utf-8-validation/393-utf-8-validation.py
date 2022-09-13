@@ -1,16 +1,9 @@
 class Solution:
     def validUtf8(self, data: List[int]) -> bool:
-        def ones(num):
-            bn = bin(num)[2:]
-            rem = 8 - len(bn)
-            bn = "0" * rem + bn
-            curr = 0
-            for k in bn:
-                if k == '1':
-                    curr += 1
-                else:
-                    break
-            return curr
+        def ones(n):
+            for i, num in enumerate([128, 192, 224, 240, 248, 256]):
+                if n < num: return i
+        
         last = 0
         i = 0
         while i < len(data):
