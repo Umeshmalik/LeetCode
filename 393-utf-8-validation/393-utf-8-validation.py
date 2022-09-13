@@ -4,7 +4,6 @@ class Solution:
             for i, num in enumerate([128, 192, 224, 240, 248, 256]):
                 if n < num: return i
         
-        last = 0
         i = 0
         while i < len(data):
             curr = ones(data[i])
