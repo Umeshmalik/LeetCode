@@ -5,19 +5,15 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def pseudoPalindromicPaths (self, root: Optional[TreeNode]) -> int:
-        ans = 0
-        def rec(node, arr):
-            if not node:
-                return None
-            arr[node.val] = not arr[node.val]
+    def pseudoPalindromicPaths (self, root: TreeNode) -> int:
+        def dfs(node, cur):
+            if not node: return 0
+            cur.remove(node.val) if node.val in cur else cur.add(node.val)
+            res = 0
             if not node.left and not node.right:
-                if sum(arr) <= 1:
-                    nonlocal ans
-                    ans += 1
-            rec(node.left, arr)
-            rec(node.right, arr)
-            arr[node.val] = not arr[node.val]
-            
-        rec(root, [False] * 10)
-        return ans
+                if len(cur) <= 1: res = 1
+            else:
+                res = res + dfs(node.left, cur) + dfs(node.right, cur)
+            cur.remove(node.val) if node.val in cur else cur.add(node.val)
+            return res
+        return dfs(root, set())
