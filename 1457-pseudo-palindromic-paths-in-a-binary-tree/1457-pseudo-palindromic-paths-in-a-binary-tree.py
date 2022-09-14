@@ -6,17 +6,18 @@
 #         self.right = right
 class Solution:
     def pseudoPalindromicPaths (self, root: Optional[TreeNode]) -> int:
-        def check(node, memory, num):
-            if not node: return num
-
-            memory ^= 1 << node.val
-
-            if node.left is None and node.right is None:
-                if memory==0 or memory&(memory-1)==0:
-                    num += 1
-            num = check(node.left, memory, num)
-            num = check(node.right, memory, num)
-                    
-            return num
-
-        return check(root, 0, 0)
+        ans = 0
+        def rec(node, arr):
+            if not node:
+                return None
+            arr[node.val] = not arr[node.val]
+            if not node.left and not node.right:
+                if sum(arr) <= 1:
+                    nonlocal ans
+                    ans += 1
+            rec(node.left, arr)
+            rec(node.right, arr)
+            arr[node.val] = not arr[node.val]
+            
+        rec(root, [False] * 10)
+        return ans
