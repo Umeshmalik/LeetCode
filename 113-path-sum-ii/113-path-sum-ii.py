@@ -6,20 +6,17 @@
 #         self.right = right
 class Solution:
     def pathSum(self, root: Optional[TreeNode], targetSum: int) -> List[List[int]]:
-        ans = []
+        self.ans = []
         
-        def helper(node, arr, sm):
+        def helper(node, arr):
             if not node: return None
-            sm += node.val
             arr.append(node.val)
-            if sm == targetSum and not node.right and not node.left:
-                nonlocal ans
-                ans.append([*arr])
-            helper(node.right, arr, sm)
-            helper(node.left, arr, sm)
+            if sum(arr) == targetSum and not node.right and not node.left:
+                self.ans.append([*arr])
+            helper(node.right, arr)
+            helper(node.left, arr)
             arr.pop()
-            sm -= node.val
             return None
         
-        helper(root, [], 0)
-        return ans
+        helper(root, [])
+        return self.ans
