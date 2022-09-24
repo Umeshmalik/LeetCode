@@ -12,7 +12,7 @@ class Solution:
             if not node: return None
             arr.append(node.val)
             if sum(arr) == targetSum and not node.right and not node.left:
-                self.ans.append([*arr])
+                self.ans.append(arr[:])
             helper(node.right, arr)
             helper(node.left, arr)
             arr.pop()
