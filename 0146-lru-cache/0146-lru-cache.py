@@ -3,7 +3,6 @@ class LRUCache:
     def __init__(self, capacity: int):
         self.cap = capacity
         self.dict = dict()
-        
 
     def get(self, key: int) -> int:
         if key not in self.dict:
