@@ -4,6 +4,6 @@ class Solution:
         st = str(num)
         for i in range(len(st) - k+1):
             n = int(st[i:i+k])
-            if n and not num % n: 
+            if n != 0 and num % n == 0:
                 ans += 1
         return ans
