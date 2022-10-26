@@ -3,6 +3,7 @@ class Solution:
         ans = 0
         st = str(num)
         for i in range(len(st) - k+1):
-            if int(st[i:i+k]) and not num % int(st[i:i+k]): 
+            n = int(st[i:i+k])
+            if n and not num % n: 
                 ans += 1
         return ans
