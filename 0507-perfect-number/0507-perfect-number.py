@@ -6,5 +6,5 @@ class Solution:
             if i == 1 or i * i == num:
                 sm += i
             elif num % i == 0:
-                sm += i + num // i
-        return True if sm == num else False
+                sm += i + (num // i)
+        return sm == num
