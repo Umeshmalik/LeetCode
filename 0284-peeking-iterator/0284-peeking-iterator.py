@@ -36,14 +36,12 @@ class PeekingIterator:
         if len(self.arr) == 0:
             self.arr.append(self.iterator.next())
         return self.arr[0]
-        
 
     def next(self):
         """
         :rtype: int
         """
         return self.arr.pop(0) if len(self.arr) > 0 else self.iterator.next()
-        
 
     def hasNext(self):
         """
