@@ -26,14 +26,15 @@ class PeekingIterator:
         :type iterator: Iterator
         """
         self.arr = []
-        while iterator.hasNext():
-            self.arr.append(iterator.next())
+        self.iterator = iterator
 
     def peek(self):
         """
         Returns the next element in the iteration without advancing the iterator.
         :rtype: int
         """
+        if len(self.arr) == 0:
+            self.arr.append(self.iterator.next())
         return self.arr[0]
         
 
@@ -41,14 +42,14 @@ class PeekingIterator:
         """
         :rtype: int
         """
-        return self.arr.pop(0)
+        return self.arr.pop(0) if len(self.arr) > 0 else self.iterator.next()
         
 
     def hasNext(self):
         """
         :rtype: bool
         """
-        return False if len(self.arr) == 0 else True
+        return False if len(self.arr) == 0 and self.iterator.hasNext() == False else True
         
 
 # Your PeekingIterator object will be instantiated and called as such:
