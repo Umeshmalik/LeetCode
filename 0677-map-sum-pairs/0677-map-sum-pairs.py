@@ -9,10 +9,8 @@ class MapSum:
     def __init__(self):
         self.root = {}
         
-
     def insert(self, key: str, val: int) -> None:
         self.root[key] = val
-            
 
     def sum(self, prefix: str) -> int:
         ans = 0
