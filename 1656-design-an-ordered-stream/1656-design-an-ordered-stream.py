@@ -1,16 +1,18 @@
 class OrderedStream:
 
     def __init__(self, n: int):
-        self.map = [None] * n
+        self.arr = [None] * n
         self.pointer = 0
         self.n = n
 
     def insert(self, idKey: int, value: str) -> List[str]:
-        self.map[idKey-1] = value
+        self.arr[idKey-1] = value
         res = []
-        while self.pointer < self.n and self.map[self.pointer]:
-            res.append(self.map[self.pointer])
-            self.pointer += 1
+        curr = self.pointer
+        while curr < self.n and self.arr[curr]:
+            res.append(self.arr[curr])
+            curr += 1
+        self.pointer = curr
         return res
 
 
