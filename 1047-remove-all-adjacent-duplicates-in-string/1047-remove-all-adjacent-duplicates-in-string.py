@@ -1,6 +1,5 @@
 class Solution:
     def removeDuplicates(self, s: str) -> str:
-        s = [*s]
         stack = []
         for i in s:
             if len(stack) > 0 and stack[-1] == i:
