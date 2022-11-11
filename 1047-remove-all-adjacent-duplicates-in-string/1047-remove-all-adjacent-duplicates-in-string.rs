@@ -1,7 +1,7 @@
 impl Solution {
     pub fn remove_duplicates(s: String) -> String {
         let mut arr = Vec::new();
-        let mut list : Vec<String> = Vec::new();
+        let mut list = Vec::new();
         for i in s.split(""){
             arr.push(i.to_string());
         }
