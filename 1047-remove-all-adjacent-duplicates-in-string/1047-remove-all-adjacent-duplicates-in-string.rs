@@ -1,17 +1,15 @@
 impl Solution {
     pub fn remove_duplicates(s: String) -> String {
         let mut arr = Vec::new();
-        let mut list = Vec::new();
-        for i in s.split(""){
-            arr.push(i.to_string());
-        }
-        for i in 0..s.len()+1{
-            if list.len() > 0 && list.last() == arr.get(i){
-                list.pop();
-            }else{
-                list.push(arr[i].to_string());
+        for i in s.chars(){
+            if let Some(x) = arr.last(){
+                if *x == i {
+                    arr.pop();
+                    continue;
+                }
             }
+            arr.push(i);
         }
-        return list.join("");
+        return arr.into_iter().collect();
     }
 }
