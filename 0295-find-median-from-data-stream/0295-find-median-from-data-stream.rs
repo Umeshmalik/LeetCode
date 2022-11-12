@@ -1,4 +1,4 @@
-use std::collections::*;
+use std::collections::BinaryHeap;
 
 struct MedianFinder {
     f:BinaryHeap<i32>,
