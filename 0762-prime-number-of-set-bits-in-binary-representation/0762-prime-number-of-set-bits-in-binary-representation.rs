@@ -3,14 +3,8 @@ impl Solution {
         let primes : Vec<i32> = vec![2, 3, 5, 7, 11, 13, 17, 19];
         let mut ans : i32 = 0;
         for i in left..right+1{
-            let c : i32 = i.count_ones() as i32;
-            for j in 0..primes.len(){
-                if primes[j] == c {
-                    ans += 1;
-                    break;
-                }
-            }
+            if primes.contains(&(i.count_ones() as i32)){ ans += 1; }
         }
-        return ans;
+        ans
     }
 }
