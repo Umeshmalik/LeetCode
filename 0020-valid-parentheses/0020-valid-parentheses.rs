@@ -10,7 +10,6 @@ impl Solution {
                 _vec.push(i);
             }
         }
-        if _vec.len() == 0{ return true;}
-        return false;
+        return _vec.is_empty();
     }
 }
