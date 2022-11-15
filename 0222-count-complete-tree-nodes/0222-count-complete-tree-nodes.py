@@ -10,13 +10,11 @@ class Solution:
         rh = 0
         left = node
         right = node
-        if left:
-            while left:
-                left = left.left
-                lf += 1
-        if right:
-            while right:
-                right = right.right
-                rh += 1
+        while left:
+            left = left.left
+            lf += 1
+        while right:
+            right = right.right
+            rh += 1
         if rh == lf : return (2 ** rh) - 1
         else: return (1 + self.countNodes(node.left) + self.countNodes(node.right))  
