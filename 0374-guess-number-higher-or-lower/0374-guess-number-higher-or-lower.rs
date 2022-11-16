@@ -13,11 +13,13 @@ impl Solution {
         let mut low : i64 = 0;
         while low <= high{
             let mid : i64 = (high + low) >> 1;
-            let act_num : i32 = guess(mid as i32);
-            if act_num == 0 { return mid as i32;}
-            else if act_num == -1 {high = mid - 1;}
-            else {low = mid + 1;}
+            match guess(mid as i32){
+                0 => return mid as i32,
+                -1 => high = mid - 1,
+                1 => low = mid + 1,
+                _ => return -2
+            }
         }
-        0
+        -1
     }
 }
