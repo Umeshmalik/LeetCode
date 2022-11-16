@@ -14,11 +14,9 @@ impl Solution {
         while low <= high{
             let mid : i64 = (high + low) >> 1;
             let act_num : i32 = guess(mid as i32);
-            // println!("{}--> mid--> {}", mid, act_num);
             if act_num == 0 { return mid as i32;}
             else if act_num == -1 {high = mid - 1;}
             else {low = mid + 1;}
-            // println!("{}--> --> {}", low, high);
         }
         0
     }
