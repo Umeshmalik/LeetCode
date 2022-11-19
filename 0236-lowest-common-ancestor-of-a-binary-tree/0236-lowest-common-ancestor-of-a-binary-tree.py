@@ -18,7 +18,6 @@ class Solution:
         
         pthP = path(root, p.val)
         pthQ = path(root, q.val)
-        print(pthP, pthQ)
         ans = -1
         for i, j in zip(pthP, pthQ):
             if i != j: break
