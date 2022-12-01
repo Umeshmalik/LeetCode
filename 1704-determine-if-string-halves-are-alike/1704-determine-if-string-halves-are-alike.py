@@ -3,10 +3,10 @@ class Solution:
         arr = ['a', 'A', 'i', 'I', 'e', 'E', 'o', 'O', 'u', 'U']
         firstH = secondH = 0
         size = len(s)
-        for i in range(size//2):
-            if s[i] in arr:
+        i = 0
+        for i in range(size):
+            if s[i] in arr and i < size//2:
                 firstH += 1
-        for i in range(size//2, size):
-            if s[i] in arr:
+            elif s[i] in arr and i < size:
                 secondH += 1
         return secondH == firstH
