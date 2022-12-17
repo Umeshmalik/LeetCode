@@ -1,5 +1,5 @@
 
-import math
+from math import ceil, floor
 class Solution:
     def evalRPN(self, tokens: List[str]) -> int:
         stack = []
@@ -14,7 +14,7 @@ class Solution:
                 elif i == "*":
                     stack.append(b * a)
                 else:
-                    r = math.ceil(b/a) if (b / a) < 0 else math.floor(b/a)
+                    r = ceil(b/a) if (b / a) < 0 else floor(b/a)
                     stack.append(r)
             else:
                 stack.append(int(i))
