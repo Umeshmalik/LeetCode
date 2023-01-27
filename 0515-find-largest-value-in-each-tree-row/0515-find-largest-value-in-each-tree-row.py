@@ -10,13 +10,11 @@ class Solution:
         def rec(node, lvl=0):
             if not node: return
             nonlocal mp
-            if lvl in mp:
-                mp[lvl] = max(mp[lvl], node.val)
-            else:
-                mp[lvl] = node.val
+            if lvl in mp: mp[lvl] = max(mp[lvl], node.val)
+            else: mp[lvl] = node.val
             rec(node.left, lvl+1)
             rec(node.right, lvl+1)
-            return
+
         rec(root)
         return [i for i in mp.values()]
                 
