@@ -12,7 +12,7 @@
 class Solution:
     def sortedListToBST(self, head: Optional[ListNode]) -> Optional[TreeNode]:
         if not head: return None
-        if head.next == None: return TreeNode(head.val);
+        if not head.next: return TreeNode(head.val);
         slow = head
         fast = head
         prev = None;
