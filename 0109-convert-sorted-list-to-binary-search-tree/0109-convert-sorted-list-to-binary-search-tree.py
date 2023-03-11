@@ -20,8 +20,5 @@ class Solution:
             prev = slow;
             slow = slow.next
             fast = fast.next.next
-        root = TreeNode(slow.val)
-        root.right = self.sortedListToBST(slow.next)
-        if prev: prev.next = None
-        root.left = self.sortedListToBST(head)
-        return root
+        prev.next = None
+        return TreeNode(slow.val, self.sortedListToBST(head), self.sortedListToBST(slow.next))
