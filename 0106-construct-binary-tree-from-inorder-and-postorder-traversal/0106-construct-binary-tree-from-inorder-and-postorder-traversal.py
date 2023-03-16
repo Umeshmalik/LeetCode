@@ -11,14 +11,10 @@ class Solution:
                 return None
 
             root_val = postorder[postorder_end]
-            root = TreeNode(root_val)
-
+            
             inorder_root_index = inorder.index(root_val)
             left_subtree_size = inorder_root_index - inorder_start
-
-            root.left = buildTreeHelper(inorder_start, inorder_root_index - 1, postorder_start, postorder_start + left_subtree_size - 1)
-            root.right = buildTreeHelper(inorder_root_index + 1, inorder_end, postorder_start + left_subtree_size, postorder_end - 1)
-
-            return root
+            
+            return TreeNode(root_val, buildTreeHelper(inorder_start, inorder_root_index - 1, postorder_start, postorder_start + left_subtree_size - 1), buildTreeHelper(inorder_root_index + 1, inorder_end, postorder_start + left_subtree_size, postorder_end - 1))
 
         return buildTreeHelper(0, len(inorder) - 1, 0, len(postorder) - 1)
