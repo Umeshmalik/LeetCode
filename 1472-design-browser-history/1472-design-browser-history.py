@@ -9,10 +9,9 @@ class BrowserHistory:
         self.backwardStack.append(url)
 
     def back(self, steps: int) -> str:
-        if len(self.backwardStack) == 0:
-            return self.start
+        if len(self.backwardStack) == 0: return self.start
         start = len(self.backwardStack) - steps if len(self.backwardStack) - steps > 0 else 0
-        temp = self.backwardStack[start:len(self.backwardStack)]
+        temp = self.backwardStack[start:]
         self.backwardStack = self.backwardStack[:start]
         self.forwardStack = temp + self.forwardStack
         return self.backwardStack[-1] if self.backwardStack else self.start
