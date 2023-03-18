@@ -15,21 +15,16 @@ class BrowserHistory{
   }
   
   back(steps: number): string{
-    let step: number = steps;
     if(this.backwardStack.length === 0) return this.start
-    while(step > 0 && this.backwardStack.length > 0){
-      this.forwardStack.push(this.backwardStack.pop())
-      step -= 1
-    }
+    const start = this.backwardStack.length - steps > 0 ? this.backwardStack.length - steps : 0;
+    const temp = this.backwardStack.splice(start, this.backwardStack.length)
+    this.forwardStack = temp.concat(this.forwardStack);
     return this.backwardStack[this.backwardStack.length-1] ?? this.start
   }
   
   forward(steps: number): string{
-    let step: number = steps;
-    while (step > 0 && this.forwardStack.length > 0){
-      this.backwardStack.push(this.forwardStack.pop())
-      step -= 1
-    }
+    const temp = this.forwardStack.splice(0, steps)
+    this.backwardStack = this.backwardStack.concat(temp);
     return this.backwardStack[this.backwardStack.length-1] ?? this.start
   }
 }
