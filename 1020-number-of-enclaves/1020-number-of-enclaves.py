@@ -20,5 +20,4 @@ class Solution:
             for j in range(len(grid[0])):
                 if grid[i][j] == 1:
                     count += 1
-                    grid[i][j] = 0
         return count
