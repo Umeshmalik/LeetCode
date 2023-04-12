@@ -1,7 +1,7 @@
 type F = (x: number) => number;
 
 function compose(functions: F[]): F {
-    return (n) => functions.reverse().reduce((acc, curr) => curr(acc) ,n);
+    return (n) => functions.reduceRight((acc, curr) => curr(acc) ,n);
 };
 
 /**
