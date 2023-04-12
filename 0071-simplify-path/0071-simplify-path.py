@@ -1,8 +1,8 @@
 class Solution:
     def simplifyPath(self, path: str) -> str:
-        arr = path.split("/")
+        path = path.split("/")
         stack = []
-        for i in arr:
+        for i in path:
             if i in ['.', ""]:
                 continue
             elif i == '..':
