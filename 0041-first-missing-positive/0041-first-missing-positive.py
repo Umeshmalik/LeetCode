@@ -2,5 +2,7 @@ from collections import Counter
 class Solution:
     def firstMissingPositive(self, nums: List[int]) -> int:
         mp = set(nums)
-        for i in range(1, max(max(nums) + 2, 2)):
+        i = 1
+        while i:
             if i not in mp: return i
+            i += 1
