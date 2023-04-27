@@ -1,5 +1,5 @@
-from math import sqrt, floor
+from math import sqrt
 
 class Solution:
     def bulbSwitch(self, n: int) -> int:
-        return floor(sqrt(n))
+        return int(sqrt(n))
